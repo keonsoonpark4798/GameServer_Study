@@ -41,8 +41,6 @@ export const loadProtos = async () => {
 
     // packetNames 에 정의된 패킷들을 등록
     for (const [namespace, types] of Object.entries(packetNames)) {
-      console.log(namespace);
-      console.log(types);
       protoMessages[namespace] = {};
       for (const [type, typeName] of Object.entries(types)) {
         protoMessages[namespace][type] = root.lookupType(typeName);
